@@ -1,2 +1,3 @@
 #!/bin/bash
-mkdir holberton mv /tmp
+cd /tmp/
+mkdir holberton
