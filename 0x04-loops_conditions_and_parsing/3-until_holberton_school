@@ -3,7 +3,7 @@
 
 i=0
 
-until [ $i -gt 10  ];
+until [ $i -gt 9 ];
 do
     echo "Holberton School";
     (( i++ ))
