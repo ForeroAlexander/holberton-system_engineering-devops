@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# for ls not display hidden files
-
-files="$(ls)"
-for f in $files; do
-    echo $f | cut -d '-' -f2
+#Bash script that displays the content of the current directory
+ls=$(ls)
+for i in $ls
+do
+     echo "$i" | cut -d "-" -f 2
 done
