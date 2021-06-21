@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# for_ls not display hidden files
+# for ls not display hidden files
 
 files="$(ls)"
 for f in $files; do
