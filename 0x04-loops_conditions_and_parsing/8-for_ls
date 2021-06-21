@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # for_ls not display hidden files
 
-files=$(ls)
-for F in $files; do
-    echo $F | cut -d '-' -f2
+files="$(ls)"
+for f in $files; do
+    echo $f | cut -d '-' -f2
 done
