@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# install nginx listening to port 80 and show string in the page.
+
+apt-get update -y
+apt-get upgrade -y
+apt-get install nginx -y
+
+match="server_name _;"
+new="\n\tlocation /redirect_me {\n\t\treturn 301 https://google.com;\n\t}"
+sed -i "/$match/a\\$new" /etc/nginx/sites-available/default
+
+echo "Ceci n'est pas une page" > /var/www/html/error404.html
+
+match="server_name _;"
+new="\n\terror_page 404 /error404.html;\n"
+sed -i "/$match/a\\$new" /etc/nginx/sites-available/default
+service nginx restart
