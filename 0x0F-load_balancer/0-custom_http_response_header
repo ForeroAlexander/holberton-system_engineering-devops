@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-# Script to Configure servers !!
-sudo apt-get update && sudo apt-get install nginx -y
-
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
-
-sudo service nginx start
-found="server_name _;"
-adding="\n\tadd_header X-Served-By $HOSTNAME;"
-sed -i "/$found/a\\$adding" /etc/nginx/sites-available/default
-
-service nginx restart
+#configures a brand new Ubuntu machine to the requirements asked in this task
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo echo "Holberton School" > /var/www/html/index.html
+old="server_name _;"
+new="\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com;\n\t}\n"
+sed -i "/$old/a\\$new" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/error404.html
+sudo sed -i "/listen 80 default_server/a\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
+sudo service nginx restart
