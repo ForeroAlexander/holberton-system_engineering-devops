@@ -8,6 +8,6 @@ echo "frontend 34.138.157.151
          default_backend web-backend
       backend web-backend
          balance roundrobin
-	 server web-01 friendhands.tech:80 check
-	 server web-02 34.138.157.151:80 check" >> /etc/haproxy/haproxy.cfg
-service haproxy start
+	 server web-01 34.139.225.249:80 check
+	 server web-02 34.139.242.191:80 check" >> /etc/haproxy/haproxy.cfg
+service haproxy restart
