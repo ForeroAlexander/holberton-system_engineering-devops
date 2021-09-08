@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Dsplay information for its subdomains www, lb-01, web-01 and web-02 - in this specific order 
+# Display information for its subdomains www, lb-01, web-01 and web-02 - in this specific order 
 if [ "$#" -eq 1 ]
 then
     dom="www.$1 lb-01.$1 web-01.$1 web-02.$1"
