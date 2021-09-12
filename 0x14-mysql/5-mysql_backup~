@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#MySQL dump and Compress it
+# Create a MySQL dump and Compress it
 if [ $# -gt 0 ]
 then
     PWD=$1
