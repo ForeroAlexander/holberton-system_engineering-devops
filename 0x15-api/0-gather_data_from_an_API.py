@@ -7,8 +7,6 @@ from sys import argv
 
 if __name__ == "__main__":
     user_id = argv[1]
-    NUMBER_OF_DONE_TASKS = 0
-    TASK_TITLE = []
 
     url_todo = 'https://jsonplaceholder.typicode.com/todos?userId={}'
     url_user = 'https://jsonplaceholder.typicode.com/users/{}'
@@ -17,17 +15,15 @@ if __name__ == "__main__":
     json_r_todos = resp_todos.json()
     json_r_user = resp_user.json()
 
-    if json_r_user and json_r_todos:
-        EMPLOYEE_NAME = json_r_user.get('name')
-        TOTAL_NUMBER_OF_TASKS = len(json_r_todos)
-        NUMBER_OF_DONE_TASKS = sum(item.get("completed")
-                                for item in json_r_todos if item)
+    user_name = json_r_user.get("name")
 
-        print("Employee {} is done with tasks({}/{}):".format(EMPLOYEE_NAME,
-                                                        TOTAL_NUMBER_OF_TASKS,
-                                                        NUMBER_OF_DONE_TASKS))
+    total_tasks = len(json_r_todos)
+    filteredData = list(filter(lambda d: d['completed'] is True, json_r_todos))
+    completed_tasks = len(filteredData)
 
-        for todo in json_r_todos:
-            TASK_TITLE = todo.get('title')
-            if todo.get("completed"):
-                print("\t {}".format(TASK_TITLE))
+    print("Employee {} is done with tasks({}/{}):".format(user_name,
+                                                        completed_tasks,
+                                                        total_tasks))
+
+    for dic in filteredData:
+        print("\t {}".format(dic.get("title")))
