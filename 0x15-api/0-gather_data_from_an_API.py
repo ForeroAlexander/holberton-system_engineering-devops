@@ -15,15 +15,15 @@ if __name__ == "__main__":
     json_r_todos = resp_todos.json()
     json_r_user = resp_user.json()
 
-    user_name = json_r_user.get("name")
+    EMPLOYEE_NAME = json_r_user.get("name")
 
-    total_tasks = len(json_r_todos)
-    filteredData = list(filter(lambda d: d['completed'] is True, json_r_todos))
-    completed_tasks = len(filteredData)
+    TOTAL_NUMBER_OF_TASKS = len(json_r_todos)
+    TASK_TITLE = list(filter(lambda d: d['completed'] is True, json_r_todos))
+    NUMBER_OF_DONE_TASKS = len(TASK_TITLE)
 
-    print("Employee {} is done with tasks({}/{}):".format(user_name,
-                                                        completed_tasks,
-                                                        total_tasks))
+    print("Employee {} is done with tasks({}/{}):".format(EMPLOYEE_NAME,
+                                                        NUMBER_OF_DONE_TASKS,
+                                                        TOTAL_NUMBER_OF_TASKS))
 
-    for dic in filteredData:
+    for dic in TASK_TITLE:
         print("\t {}".format(dic.get("title")))
