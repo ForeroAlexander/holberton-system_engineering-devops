@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     USERNAME = json_r_user.get("username")
 
-    json_fname =  USER_ID + ".json"
+    json_fname = USER_ID + ".json"
 
     val_l = []
     for task in json_r_todos:
