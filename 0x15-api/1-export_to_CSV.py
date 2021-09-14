@@ -26,9 +26,9 @@ if __name__ == "__main__":
         csv_writer = csv.writer(fd_csv, quoting=csv.QUOTE_ALL)
 
         for todo in json_r_todos:
-                TASK_COMPLETED_STATUS = todo.get("completed")
-                TASK_TITLE = todo.get('title')
-                csv_writer.writerow([USER_ID,
-                                    USERNAME,
-                                    TASK_COMPLETED_STATUS,
-                                    TASK_TITLE])
+            TASK_COMPLETED_STATUS = todo.get("completed")
+            TASK_TITLE = todo.get('title')
+            csv_writer.writerow([USER_ID,
+                                USERNAME,
+                                TASK_COMPLETED_STATUS,
+                                TASK_TITLE])
