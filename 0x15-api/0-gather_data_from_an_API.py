@@ -22,8 +22,8 @@ if __name__ == "__main__":
     NUMBER_OF_DONE_TASKS = len(TASK_TITLE)
 
     print("Employee {} is done with tasks({}/{}):".format(EMPLOYEE_NAME,
-                                                        NUMBER_OF_DONE_TASKS,
-                                                        TOTAL_NUMBER_OF_TASKS))
+                                                          NUMBER_OF_DONE_TASKS,
+                                                          TOTAL_NUMBER_OF_TASKS))
 
     for dic in TASK_TITLE:
         print("\t {}".format(dic.get("title")))
