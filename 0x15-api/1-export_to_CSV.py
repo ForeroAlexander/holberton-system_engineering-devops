@@ -18,12 +18,11 @@ if __name__ == "__main__":
 
     USERNAME = json_r_user.get("username")
 
-    csv_fname = USER_ID + ".csv"
 
-    with open(csv_fname, 'w+') as fd_csv:
+    with open(USER_ID + ".csv", 'w+') as csv_fname:
 
         # Object used to write in CSV format
-        csv_writer = csv.writer(fd_csv, quoting=csv.QUOTE_ALL)
+        csv_writer = csv.writer(csv_fname, quoting=csv.QUOTE_ALL)
 
         for todo in json_r_todos:
             TASK_COMPLETED_STATUS = todo.get("completed")
